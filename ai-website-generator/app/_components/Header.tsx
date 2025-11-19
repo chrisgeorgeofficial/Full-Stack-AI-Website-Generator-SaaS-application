@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const MenuOptions = [
   {
-    name: "pricing",
+    name: "Pricing",
     path: "/pricing",
   },
   {
