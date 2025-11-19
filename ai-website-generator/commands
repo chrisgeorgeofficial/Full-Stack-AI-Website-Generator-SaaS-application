@@ -1,4 +1,4 @@
-
+npx create-next-app@15.5.4
 cd ai-website-generator
 npx shadcn@latest init
 npx shadcn@latest add
