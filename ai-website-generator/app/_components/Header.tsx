@@ -25,7 +25,7 @@ function Header() {
       {/* Menu Options */}
       <div>
         {MenuOptions.map((menu, index) => (
-          <Button key={index}>{menu.name}</Button>
+          <Button variant={'ghost'} key={index}>{menu.name}</Button>
         ))}
       </div>
 
