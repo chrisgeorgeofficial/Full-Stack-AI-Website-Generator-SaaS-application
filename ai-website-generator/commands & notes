@@ -9,3 +9,12 @@ npm run dev
 
 # To change Font
 Go to layout.tsx and change the font name (Replace the font name with the font name you have choosen from google fonts).
+
+# Websites & Resourses
+- https://nextjs.org/
+- https://shadcn.com/docs/getting-started/introduction
+- https://fonts.google.com/
+- https://ui.shadcn.com/docs/components/button
+- https://tailwindcss.com/docs/installation
+- https://react.dev/
+- https://www.untitledui.com/react
