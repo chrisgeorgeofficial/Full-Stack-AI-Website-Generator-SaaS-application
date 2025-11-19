@@ -1,0 +1,11 @@
+# Create the project cmds
+npx create-next-app@15.5.4
+cd ai-website-generator
+npx shadcn@latest init
+npx shadcn@latest add
+
+# cmd to run the project 
+npm run dev
+
+# To change Font
+Go to layout.tsx and change the font name (Replace the font name with the font name you have choosen from google fonts).
