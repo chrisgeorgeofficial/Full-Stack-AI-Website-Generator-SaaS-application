@@ -6,6 +6,7 @@ import { ImagePlus } from "lucide-react";
 import { ArrowUp } from "lucide-react";
 import { LayoutDashboard, Key, HomeIcon, User } from "lucide-react";
 import { useState } from "react";
+import { SignUpButton } from "@clerk/nextjs";
 
 const suggestions = [
   {
@@ -57,9 +58,11 @@ function Hero() {
           <Button variant={"ghost"}>
             <ImagePlus />
           </Button>
+          <SignUpButton mode='modal' forceRedirectUrl={'/workspace'}>
           <Button>
             <ArrowUp />
           </Button>
+          </SignUpButton>
         </div>
       </div>
       {/* suggestion list */}

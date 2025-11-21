@@ -34,7 +34,8 @@ function Header() {
       {/* Get Started Button */}
 
       <div>
-        <SignInButton mode='modal'>
+        {/* Using SignInButton from Clerk for authentication - Using mode = 'modal' signin window will come as pop in landing page */}
+        <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
         <Button>Get Started <ArrowRight/></Button>
         </SignInButton>
       </div>
