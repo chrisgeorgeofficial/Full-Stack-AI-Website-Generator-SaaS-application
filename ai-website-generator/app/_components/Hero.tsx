@@ -46,7 +46,7 @@ function Hero() {
         Imagine. Generate. Edit. Explore. Export.{" "}
       </p>
       {/* input box */}
-      <div className="w-full max-w-xl p-5 border mt-5 rounded-2xl">
+      <div className="w-full max-w-2xl p-5 border mt-5 rounded-2xl">
         <textarea
           placeholder="Describe your page design"
           value={userInput}
@@ -65,7 +65,9 @@ function Hero() {
       {/* suggestion list */}
       <div className="mt-4 flex gap-3">
         {suggestions.map((suggestion, index) => (
-          <Button key={index} variant={'outline'}>
+          <Button key={index} variant={'outline'}
+          onClick={()=>setUserInput(suggestion.prompt)}
+          >
             <suggestion.icon />
             {suggestion.label}</Button>
         ))}
