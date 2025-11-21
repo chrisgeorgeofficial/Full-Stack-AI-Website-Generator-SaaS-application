@@ -59,7 +59,7 @@ function Hero() {
             <ImagePlus />
           </Button>
           <SignUpButton mode='modal' forceRedirectUrl={'/workspace'}>
-          <Button>
+          <Button disabled={!userInput}>
             <ArrowUp />
           </Button>
           </SignUpButton>
