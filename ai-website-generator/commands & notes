@@ -15,6 +15,9 @@ npx drizzle-kit push
 # See database without going to neon website
 npx drizzle-kit studio
 
+# clerk authentication
+npm install @clerk/nextjs
+
 # cmd to run the project 
 npm run dev
 
