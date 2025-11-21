@@ -4,6 +4,17 @@ cd ai-website-generator
 npx shadcn@latest init
 npx shadcn@latest add
 
+
+#Database with drizzle-orm and neon db
+npm i drizzle-orm @neondatabase/serverless dotenv
+npm i -D drizzle-kit tsx
+
+# To Apply changes in db
+npx drizzle-kit push
+
+# See database without going to neon website
+npx drizzle-kit studio
+
 # cmd to run the project 
 npm run dev
 
@@ -19,3 +30,5 @@ Go to layout.tsx and change the font name (Replace the font name with the font n
 - https://react.dev/
 - https://www.untitledui.com/logos
 - Youtube : https://www.youtube.com/watch?v=tKDPE219kCE&list=WL&index=1&t=153s
+- https://orm.drizzle.team/
+- https://neon.com/
