@@ -18,6 +18,14 @@ npx drizzle-kit studio
 # clerk authentication
 npm install @clerk/nextjs
 
+# To create a signin & Signup page 
+- create folder named (auth) in app folder
+- create a file named sign-in/[[...sign-in]]/page.tsx (copied from clerk next.js documentation - signin page)
+- Resources :
+  - https://clerk.com/docs/nextjs/guides/development/custom-sign-in-or-up-page
+  - https://clerk.com/docs/nextjs/get-started/installation  
+  - https://clerk.com/docs/nextjs/guides/development/custom-sign-up-page
+
 # cmd to run the project 
 npm run dev
 
