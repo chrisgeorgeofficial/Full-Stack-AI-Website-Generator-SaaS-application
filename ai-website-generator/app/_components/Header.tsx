@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Link } from "lucide-react";
 import { SignInButton } from '@clerk/nextjs'
+import { User } from "@clerk/nextjs/server";
 
 const MenuOptions = [
   {
@@ -32,15 +33,23 @@ function Header() {
       </div>
 
       {/* Get Started Button */}
-
+        
       <div>
         {/* Using SignInButton from Clerk for authentication - Using mode = 'modal' signin window will come as pop in landing page */}
-        <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
+        
+        {!User ? <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
+        
         <Button>Get Started <ArrowRight/></Button>
+      
         </SignInButton>
+            :
+            <Link href={'/workspace'}>
+              <Button>Get <ArrowRight/></Button>
+            </Link>
+        }
       </div>
     </div>
-  );
+  )
 }
 
 export default Header;
