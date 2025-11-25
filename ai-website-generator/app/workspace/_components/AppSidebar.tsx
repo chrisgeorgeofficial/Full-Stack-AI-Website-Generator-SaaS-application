@@ -1,11 +1,28 @@
-import React from 'react'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarHeader,
+} from "@/components/ui/sidebar"
 
-function AppSidebar() {
+//Import Image
+import Image from "next/image";
+
+export function AppSidebar() {
   return (
-    <div>
-      
-    </div>
+    <Sidebar>
+      <SidebarHeader >
+        <div className="flex items-center gap-2">
+            <Image src={'/logo.svg'} alt="logo" width={35} height={35}/>
+            <h2 className="font-bold text-xl">AI Website Builder</h2>
+        </div>
+      </SidebarHeader>
+      <SidebarContent>
+        <SidebarGroup />
+        <SidebarGroup />
+      </SidebarContent>
+      <SidebarFooter />
+    </Sidebar>
   )
 }
-
-export default AppSidebar

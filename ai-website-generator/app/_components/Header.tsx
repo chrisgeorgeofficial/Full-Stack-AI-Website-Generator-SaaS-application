@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import { ArrowRight, Link } from "lucide-react";
-import { SignInButton } from '@clerk/nextjs'
-import { User } from "@clerk/nextjs/server";
+import { SignInButton, UserButton } from '@clerk/nextjs'
+import { currentUser } from "@clerk/nextjs/server";
 
 const MenuOptions = [
   {
@@ -15,8 +15,9 @@ const MenuOptions = [
     path: "/contact-us",
   },
 ];
+async function Header() {
+  const user = await currentUser();
 
-function Header() {
   return (
     <div className='flex items-center justify-between p-4 shadow'>
       {/* Logo */}
@@ -37,16 +38,18 @@ function Header() {
       <div>
         {/* Using SignInButton from Clerk for authentication - Using mode = 'modal' signin window will come as pop in landing page */}
         
-        {!User ? <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
-        
-        <Button>Get Started <ArrowRight/></Button>
-      
-        </SignInButton>
-            :
+        {!user ? (
+          <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
+            <Button>Get Started <ArrowRight/></Button>
+          </SignInButton>
+        ) : (
+          <div className="flex gap-2 items-center">
             <Link href={'/workspace'}>
-              <Button>Get <ArrowRight/></Button>
+              <Button>Go to Workspace <ArrowRight/></Button>
             </Link>
-        }
+            <UserButton />
+          </div>
+        )}
       </div>
     </div>
   )
