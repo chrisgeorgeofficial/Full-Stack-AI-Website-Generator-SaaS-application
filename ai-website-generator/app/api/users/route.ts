@@ -2,6 +2,7 @@ import { db } from "@/config/db";
 import { usersTable } from "@/config/schema";
 import { currentUser } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
+//import { User2Icon } from "lucide-react";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req:NextRequest) {
@@ -20,5 +21,5 @@ export async function POST(req:NextRequest) {
             email:user?.primaryEmailAddress?.emailAddress??'',
     })
     }
-    return NextResponse.json({})
+    return NextResponse.json({user})
 }

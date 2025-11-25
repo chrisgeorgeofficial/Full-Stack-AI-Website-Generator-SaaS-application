@@ -18,6 +18,9 @@ npx drizzle-kit studio
 # clerk authentication
 npm install @clerk/nextjs
 
+#Axios for API calls
+npm i axios
+
 # To create a signin & Signup page 
 - create folder named (auth) in app folder
 - create a file named sign-in/[[...sign-in]]/page.tsx (copied from clerk next.js documentation - signin page)
@@ -43,3 +46,4 @@ Go to layout.tsx and change the font name (Replace the font name with the font n
 - Youtube : https://www.youtube.com/watch?v=tKDPE219kCE&list=WL&index=1&t=153s
 - https://orm.drizzle.team/
 - https://neon.com/
+- https://axios-http.com/docs/intro
