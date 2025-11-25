@@ -14,12 +14,18 @@ export async function POST(req:NextRequest) {
 
 
     //if Not Then insert user
-    if(userResult.length === 0)
+    if(userResult.length == 0)
     {
+        const data={
+            name: user?.fullName??'NA',
+            email: user?.primaryEmailAddress?.emailAddress??'',
+            credits:2
+        }
+
         const result = await db.insert(usersTable).values({
-            name:user?.fullName??'NA',
-            email:user?.primaryEmailAddress?.emailAddress??'',
+            ...data
     })
+    return NextResponse.json({user: data, message:"New User Created"})
     }
-    return NextResponse.json({user})
+    return NextResponse.json({user: userResult[0], message:"User Already Exits"})
 }

@@ -21,6 +21,8 @@ npm install @clerk/nextjs
 #Axios for API calls
 npm i axios
 
+# React Hooks which help us to share information across components -- state management
+
 # To create a signin & Signup page 
 - create folder named (auth) in app folder
 - create a file named sign-in/[[...sign-in]]/page.tsx (copied from clerk next.js documentation - signin page)
