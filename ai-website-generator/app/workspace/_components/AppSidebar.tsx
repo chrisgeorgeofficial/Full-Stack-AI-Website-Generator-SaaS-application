@@ -12,7 +12,7 @@ import Image from "next/image";
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader >
+      <SidebarHeader className="p-5">
         <div className="flex items-center gap-2">
             <Image src={'/logo.svg'} alt="logo" width={35} height={35}/>
             <h2 className="font-bold text-xl">AI Website Builder</h2>

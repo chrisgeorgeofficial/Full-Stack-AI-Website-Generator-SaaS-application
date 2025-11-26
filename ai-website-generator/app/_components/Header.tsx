@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
-import { ArrowRight, Link } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { SignInButton, UserButton } from '@clerk/nextjs'
 import { currentUser } from "@clerk/nextjs/server";
 
@@ -40,12 +41,12 @@ async function Header() {
         
         {!user ? (
           <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
-            <Button>Get Started <ArrowRight/></Button>
+            <Button>Get Started<ArrowRight/></Button>
           </SignInButton>
         ) : (
           <div className="flex gap-2 items-center">
             <Link href={'/workspace'}>
-              <Button>Go to Workspace <ArrowRight/></Button>
+              <Button>Get Started<ArrowRight/></Button>
             </Link>
             <UserButton />
           </div>
