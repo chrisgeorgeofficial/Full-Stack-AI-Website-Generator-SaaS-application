@@ -5,6 +5,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarHeader,
 } from "@/components/ui/sidebar"
 
@@ -29,8 +30,9 @@ export function AppSidebar() {
         </Button>
         </Link>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="p-2">
         <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
           {projectList.length ==0&&
           <h2>No Project Found</h2>}
         </SidebarGroup>
