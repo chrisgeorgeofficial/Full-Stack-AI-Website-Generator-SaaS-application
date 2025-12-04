@@ -8,15 +8,16 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
 } from "@/components/ui/sidebar"
-
+import {UserDetailContext} from "@/context/UserDetailContext"
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 //Import Image
 import Image from "next/image";
 
 export function AppSidebar() {
   const [projectList,setProjectList] = useState([]);
+  const {userDetail,setUserDetail} = useContext(UserDetailContext)
   return (
     <Sidebar>
       <SidebarHeader className="p-5">
@@ -34,11 +35,15 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel>Projects</SidebarGroupLabel>
           {projectList.length ==0&&
-          <h2>No Project Found</h2>}
+          <h2 className="text-sm px-2 text-gray-500">No Project Found</h2>}
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <div>
+          <h2>Remaining Credits <span className="font-bold">2</span></h2>
+        </div>
+      </SidebarFooter>
     </Sidebar>
   )
 }
