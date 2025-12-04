@@ -14,6 +14,8 @@ import { useState, useContext } from "react";
 
 //Import Image
 import Image from "next/image";
+import { Progress } from "@/components/ui/progress";
+import { UserButton } from '@clerk/nextjs';
 
 export function AppSidebar() {
   const [projectList, setProjectList] = useState([]);
@@ -38,12 +40,20 @@ export function AppSidebar() {
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter>
-        <div>
-          <h2>
+      <SidebarFooter className="p-2">
+        <div className="p-3 border rounded-xl space-y-3 bg-secondary">
+          <h2 className="flex justify-between items-center">
             Remaining Credits{" "}
-            <span className="font-bold">{userDetail.credits}</span>
+            <span className="font-bold">{userDetail?.credits ?? 0}</span>
           </h2>
+          <Progress value={33} />
+          <Button className='w-full'>
+            Upgrade to Unlimited
+          </Button>
+        </div>
+        <div className="flex items-center gap-2">
+          <UserButton />
+          <Button variant={'ghost'}>Settings</Button>
         </div>
       </SidebarFooter>
     </Sidebar>
