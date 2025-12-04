@@ -1,9 +1,12 @@
+import { SidebarTrigger,UserButton } from '@/components/ui/sidebar'
 import React from 'react'
 
 function AppHeader() {
   return (
     <div>
-      AppHeader
+      {/* This to close the side bar */}
+      <SidebarTrigger />
+      <UserButton />
     </div>
   )
 }
